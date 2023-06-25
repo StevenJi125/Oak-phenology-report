@@ -87,24 +87,24 @@ for (i in 1:12){
 # The mean bud burst scores and air temperatures are recorded in "Oak phenology data.csv"
 # Plotting mean bud burst score variation every April from 2010-2021
 plotting_2021<-read.csv("~/Downloads/Oak phenology data.csv")
-plot(plotting_2021$Year,plotting_2021$Mean.leaf.bursts.score,xlab="Years",ylab="Mean bud burst scores",col="darkgreen",pch=4,cex.lab=1.5,cex=1.5)
+plot(plotting_2021$Year,plotting_2021$Mean.leaf.bursts.score,xlab="Years",ylab="Mean bud burst scores",col="green3",pch=15,cex.lab=1.5,cex=1.5)
 linear_2021<-lm(plotting_2021$Mean.leaf.bursts.score~plotting_2021$Year)
-abline(linear_2021,col="darkgreen", lty="dashed")
+abline(linear_2021,col="green3",lty="dashed")
 
 # Plotting mean air temperature variation each April from 2010-2021
 plotting_2021<-read.csv("~/Downloads/Oak phenology data.csv")
-plot(plotting_2021$Year,plotting_2021$Mean.air.temperature....C,xlab="Years",ylab="Mean air temperatures (°C)",col="darkred",pch=4,cex.lab=1.5,cex=1.5)
+plot(plotting_2021$Year,plotting_2021$Mean.air.temperature....C,xlab="Years",ylab="Mean air temperatures (°C)",col="orange2",pch=16,cex.lab=1.5,cex=1.5)
 linear_2021<-lm(plotting_2021$Mean.air.temperature....C~plotting_2021$Year)
-abline(linear_2021,col="darkred", lty="dashed")
+abline(linear_2021,col="orange2", lty="dashed")
 
 # Plotting mean bud burst scores against mean air temperatures
 plotting_2021<-read.csv("~/Downloads/Oak phenology data.csv")
 str(plotting_2021)
 labels<-plotting_2021$Year
-plot(plotting_2021$Mean.air.temperature....C,plotting_2021$Mean.leaf.bursts.score,xlab="Mean air temperatures (°C)",ylab="Mean bud burst scores",pch=4,cex.lab=1.5,cex=1.5)
+plot(plotting_2021$Mean.air.temperature....C,plotting_2021$Mean.leaf.bursts.score,xlab="Mean air temperatures (°C)",ylab="Mean bud burst scores",pch=17,cex.lab=1.5,cex=1.5,col="purple")
 text(plotting_2021$Mean.air.temperature....C,plotting_2021$Mean.leaf.bursts.score,labels, pos = 3)
 linear_2021<-lm(plotting_2021$Mean.leaf.bursts.score~plotting_2021$Mean.air.temperature....C)
-abline(linear_2021,lty="dashed")
+abline(linear_2021,col="purple",lty="dashed")
 
 # Plotting diganostic plots for the linear regression
 par(mfrow = c(2, 2), mar = c(5, 5, 1.5, 1.5))
