@@ -101,10 +101,10 @@ abline(linear_2021,col="orange2", lty="dashed")
 plotting_2021<-read.csv("~/Downloads/Oak phenology data.csv")
 str(plotting_2021)
 labels<-plotting_2021$Year
-plot(plotting_2021$Mean.air.temperature....C,plotting_2021$Mean.leaf.bursts.score,xlab="Mean air temperatures (°C)",ylab="Mean bud burst scores",pch=17,cex.lab=1.5,cex=1.5,col="purple")
+plot(plotting_2021$Mean.air.temperature....C,plotting_2021$Mean.leaf.bursts.score,xlab="Mean air temperatures (°C)",ylab="Mean bud burst scores",pch=17,cex.lab=1.5,cex=1.5,col="brown")
 text(plotting_2021$Mean.air.temperature....C,plotting_2021$Mean.leaf.bursts.score,labels, pos = 3)
 linear_2021<-lm(plotting_2021$Mean.leaf.bursts.score~plotting_2021$Mean.air.temperature....C)
-abline(linear_2021,col="purple",lty="dashed")
+abline(linear_2021,col="brown",lty="dashed")
 
 # Plotting diganostic plots for the linear regression
 par(mfrow = c(2, 2), mar = c(5, 5, 1.5, 1.5))
